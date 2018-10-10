@@ -1,4 +1,4 @@
-{% set version = '0.9-55' %}
+{% set version = '1.0.0' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -10,20 +10,23 @@ package:
 source:
   fn: svGUI_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/svGUI_{{ version }}.tar.gz
-    - http://cran.r-project.org/src/contrib/svGUI_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/svGUI/svGUI_{{ version }}.tar.gz
-  sha256: 388749ef1b9caf0e25b24a688f88ad5d5089ae6e1dcccf851e763158456073ba
+    - {{ cran_mirror }}/src/contrib/svGUI_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/svGUI/svGUI_{{ version }}.tar.gz
+  sha256: ccf5167cc2423ba90003e5744bde7c7ac217e691150a20df0018654f2e58eae4
 
 build:
-  number: 1
-  skip: true  # [win32]
-
+  merge_build_host: True  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+
+# Suggests: covr, knitr, testthat
 requirements:
   build:
+    - {{posix}}zip               # [win]
+
+  host:
     - r-base
 
   run:
@@ -31,13 +34,17 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('svGUI')"  # [not win]
+    - $R -e "library('svGUI')"           # [not win]
     - "\"%R%\" -e \"library('svGUI')\""  # [win]
 
 about:
-  home: http://www.sciviews.org/SciViews-R
+  home: https://github.com/SciViews/svGUI, http://www.sciviews.org/SciViews-R
   license: GPL-2
-  summary: Functions to manage GUIs from R
+  summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI)
+    in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...).
+    It centralizes info about GUI elements currently used, and it dispatches GUI calls
+    to the particular toolkits in use in function of the context (is R run at the terminal,
+    within a Tk application, a HTML page?).
   license_family: GPL2
 
 extra:
