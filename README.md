@@ -1,22 +1,21 @@
 About r-svgui
 =============
 
-Home: http://www.sciviews.org/SciViews-R
+Home: https://github.com/SciViews/svGUI, http://www.sciviews.org/SciViews-R
 
 Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
-Summary: Functions to manage GUIs from R
+Summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI) in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...). It centralizes info about GUI elements currently used, and it dispatches GUI calls to the particular toolkits in use in function of the context (is R run at the terminal, within a Tk application, a HTML page?).
 
 
 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-svGUI-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-svGUI-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-svGUI-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-svGUI-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-svGUI-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-svGUI-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-svgui-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-svgui-feedstock)
 
 Current release info
 ====================
