@@ -37,6 +37,7 @@ test:
 about:
   home: https://github.com/SciViews/svGUI, http://www.sciviews.org/SciViews-R
   license: GPL-2
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
   summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI)
     in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...).
     It centralizes info about GUI elements currently used, and it dispatches GUI calls
@@ -47,6 +48,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
-    - johanneskoester
-    - bgruening
