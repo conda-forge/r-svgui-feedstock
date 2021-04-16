@@ -1,4 +1,4 @@
-{% set version = '1.0.0' %}
+{% set version = "1.0.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/svGUI_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svGUI/svGUI_{{ version }}.tar.gz
-  sha256: ccf5167cc2423ba90003e5744bde7c7ac217e691150a20df0018654f2e58eae4
+  sha256: e9a477b41276b8c4b5040b594fad1ddf8173481ff5f63d78929d0c345d7b0532
 
 build:
   noarch: generic
-  number: 1002
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,12 +37,9 @@ test:
 about:
   home: https://github.com/SciViews/svGUI, http://www.sciviews.org/SciViews-R
   license: GPL-2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
-  summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI)
-    in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...).
-    It centralizes info about GUI elements currently used, and it dispatches GUI calls
-    to the particular toolkits in use in function of the context (is R run at the terminal,
-    within a Tk application, a HTML page?).
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI) in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...). It centralizes info about GUI elements currently used, and it dispatches GUI calls to the particular toolkits in use in function of the context (is
+    R run at the terminal, within a Tk application, a HTML page?).
   license_family: GPL2
 
 extra:
