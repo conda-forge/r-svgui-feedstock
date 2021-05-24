@@ -1,5 +1,4 @@
 {% set version = "1.0.1" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: svGUI_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/svGUI_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svGUI/svGUI_{{ version }}.tar.gz
@@ -21,11 +19,9 @@ build:
     - lib/R/lib/
     - lib/
 
-# Suggests: covr, knitr, testthat
 requirements:
   host:
     - r-base
-
   run:
     - r-base
 
@@ -36,11 +32,12 @@ test:
 
 about:
   home: https://github.com/SciViews/svGUI, http://www.sciviews.org/SciViews-R
-  license: GPL-2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license: GPL-2.0-only
   summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI) in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...). It centralizes info about GUI elements currently used, and it dispatches GUI calls to the particular toolkits in use in function of the context (is
     R run at the terminal, within a Tk application, a HTML page?).
   license_family: GPL2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
