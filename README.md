@@ -1,11 +1,11 @@
-About r-svgui
-=============
+About r-svgui-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-svgui-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/SciViews/svGUI, http://www.sciviews.org/SciViews-R
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-svgui-feedstock/blob/main/LICENSE.txt)
 
 Summary: The SciViews svGUI package eases the management of Graphical User Interfaces (GUI) in R. It is independent from any particular GUI widgets (Tk, Gtk2, native, ...). It centralizes info about GUI elements currently used, and it dispatches GUI calls to the particular toolkits in use in function of the context (is R run at the terminal, within a Tk application, a HTML page?).
 
