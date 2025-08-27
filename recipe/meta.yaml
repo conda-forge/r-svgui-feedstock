@@ -1,4 +1,4 @@
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,11 +9,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/svGUI_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svGUI/svGUI_{{ version }}.tar.gz
-  sha256: e9a477b41276b8c4b5040b594fad1ddf8173481ff5f63d78929d0c345d7b0532
+  sha256: c79ab132823444b8e292182e3c6f2944c2d7ea1ce51cc436f74c8a46ad183143
 
 build:
-  noarch: generic 
-  number: 3
+  noarch: generic
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
